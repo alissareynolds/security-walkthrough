@@ -1,4 +1,7 @@
+let bcrypt = require('bcryptjs')
+
 let userDatase = []
+
 
 let randomFortunes = [
     'You befriend a bear',
@@ -23,8 +26,8 @@ module.exports = {
             res.status(200).send({success: false, message: 'user with that email does not exist'})
             return
         }
-
-        if (userObj.password === password) {
+                
+           if (bcrypt.compareSync(password, userObj.password)) {
             let randomFortune = randomFortunes[Math.floor(Math.random() * randomFortunes.length)]
 
             res.send({success: true, fortune: randomFortune})
@@ -35,9 +38,11 @@ module.exports = {
     signUp: (req, res) => {
         let { email, password, firstName, lastName } = req.body
 
+        let hashedPassword = bcrypt.hashSync(password, 10)
+
         userDatase.push({
             email,
-            password,
+            password: hashedPassword,
             firstName,
             lastName,
             id: startingId++
