@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Fortune App</title>
+</head>
+<body>
+    <h1>Welcome to the fortune app!</h1>
+    <div id="auth-section">
+        <h3>Log In to see your fortune</h3>
+        <form id="login-form">
+            <label for="email-login">Email</label>
+            <input id="email-login"/>
+            <label for="password-login">Password</label>
+            <input id="password-login" type="password"/>
+            <button>Log In</button>
+        </form>
+        <h3>Don't have an account? Sign up!</h3>
+        <form id="signup-form">
+            <label for="email-signup">Email</label>
+            <input id="email-signup"/>
+            <label for="password-signup">Password</label>
+            <input id="password-signup" type="password"/>
+            <label for="first-name-signup">First Name</label>
+            <input id="first-name-signup"/>
+            <label for="last-name-signup">Last Name</label>
+            <input id="last-name-signup"/>
+            <button>Sign Up</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
